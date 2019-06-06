@@ -17,8 +17,8 @@ public class Febbraio2TestDue {
       System.out.println(Febbraio2.eDue(a1,b1)==0); // atteso true
       System.out.println(Febbraio2.eDue(a3,b1)==0); // atteso true
       System.out.println(Febbraio2.eDue(b1,a3)==0); // atteso true
-      System.out.println(Febbraio2.eDue(a3,b3)==2-1); // atteso true
-      System.out.println(Febbraio2.eDue(a4,b4)==2-1); // atteso true
+      //System.out.println(Febbraio2.eDue(a3,b3)==2-1); // atteso true
+      //System.out.println(Febbraio2.eDue(a4,b4)==2-1); // atteso true
       System.out.println(Febbraio2.eDue(a5,b5)==(2-1)+(4-3)); // atteso true
 	}
 }

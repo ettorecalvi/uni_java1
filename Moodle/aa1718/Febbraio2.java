@@ -66,6 +66,31 @@ public class Febbraio2 {
 	 * La classe Febbraio2TestExDue puo' essere usata per il testing di eDue.
 	 * SCRIVERE eDue immediatamente al di sotto di questo commento.
 	 */
+	public static int eDue(int[] a, int[]  b){
+		
+		int sum=0; 
+		if(a != null && b != null){
+			if(a.length !=0 && b.length !=0){
+				sum = controvariante(a, b, 0, a.length, b.length);
+			} else return 0;
+		} else return 0;
+		return sum;  
+	}
+
+	private static int controvariante (int[] a, int[] b, int i, int al, int bl) {
+		int suma=0;
+		
+		if(i <= al-1 && i <= bl-1){
+			if(a[i + 1] > b[i + 1]){
+				suma = a[i + 1] - b[i + 1];
+				System.out.println(suma); 
+			}	
+			suma = 0; 
+				return controvariante(a, b, i, al, bl) + controvariante(a, b, i, al, bl);			
+		} else 
+			return 0;
+	}
+	
 
     /* ESERCIZIO 3 (Massimo 2 + 2 + 3 + 3 punti -- da consegnare a mano).
 	 * Sia dato il metodo eTre qui sotto definito.
