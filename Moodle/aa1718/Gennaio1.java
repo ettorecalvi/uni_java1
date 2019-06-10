@@ -22,7 +22,36 @@ public class Gennaio1 {
 	 * contenendo esempi sul funzionamento atteso per eUno. 
 	 * SCRIVERE eUno immediatamente al di sotto di questo commento.  
 	 */
-	   
+	   public static int eUno(int[] a, int[]b, int[]c){
+
+		int sum =0;
+		
+		if((a != null && b != null && c != null) && (a.length != 0 && b.length != 0 && c.length !=0)){
+
+			for(int i=0; i<a.length; i++){
+				int count_1 =0;
+				int count=0;
+				for(int j=0; j<b.length; j++){
+					
+					for(int k=0; k<c.length; k++){
+						if(a[i]<c[k]){
+							count ++; 
+						}
+					}
+					if(a[i]>b[j]){
+						count_1 ++;
+					}
+					
+				}
+				if((count > 0)&&(count_1>0)){
+					sum = sum + a[i];
+				}
+			}
+		}
+		return sum; 
+	   }
+
+
 	/* ESERCIZIO 2 (Massimo 7 punti -- da consegnare elettronicamente).
 	 * Scrivere un metodo di nome eDue con le seguenti caratteristiche:
 	 * --) eDue ha due parametri formali. Entrambi sono riferimenti (puntatori) 
@@ -37,6 +66,38 @@ public class Gennaio1 {
 	 * La classe Gennaio1TestExDue puo' essere usata per il testing di eDue.
 	 * SCRIVERE eDue immediatamente al di sotto di questo commento.
 	 */
+
+	 public static int eDue(boolean[] a, boolean[] b){
+		 
+		int dis =0;
+		if((a != null && b != null)&&(a.length != 0 && b.length != 0)){
+
+			if(a.length > b.length){
+			dis = co_variante (a, b, b.length-1); 
+			} else {
+				if(a.length <= b.length){
+					dis = co_variante(a, b, a.length-1);
+				}
+			}
+			System.out.println(dis); 
+			return  dis; 
+		} else {
+			return 0;
+		} 
+	}
+
+	 private static int co_variante(boolean[] a, boolean[]b, int i){
+		
+		if(i > -1){
+			if((a[i] || b[i])==false){
+				return 1 + co_variante(a, b, i-1, dis);
+			} else {
+				return 0 + co_variante(a, b, i-1, dis); 
+			}	
+		} else {
+			return 0;
+		}
+	 }
 
 	/* ESERCIZIO 3 (Massimo 2 + 2 + 3 + 3 punti -- da consegnare a mano).
 	 * Sia dato il metodo eTre qui sotto definito.

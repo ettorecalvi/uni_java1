@@ -83,7 +83,7 @@ public class Febbraio2 {
 		if(i <= al-1 && i <= bl-1){
 			if(a[i + 1] > b[i + 1]){
 				suma = a[i + 1] - b[i + 1];
-				System.out.println(suma); 
+				System.out.println(suma); //correggi 
 			}	
 			suma = 0; 
 				return controvariante(a, b, i, al, bl) + controvariante(a, b, i, al, bl);			
