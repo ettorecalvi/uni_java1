@@ -23,6 +23,40 @@ public class Febbraio3 {
 	 * SCRIVERE eUno immediatamente al di sotto di questo commento.  
 	 */
 
+	 /*
+	 public static int eUno(int[] a, int[] b, int[] c){
+		int e=0; 
+		int e1=0; 
+		boolean ok = false;
+		
+		if((a == null || b == null || c == null) || (a.length == 0 || b.length ==0 || c.length ==0)){
+			return 0;
+		} else {
+			boolean found = false;
+			for(int j=0; j<b.length && !found; j++){
+				int h = j; 
+				int count =0;
+				for(int i=0; i<a[h].length; i++){
+					int k = i;
+					if(a[k]>b[h]){
+					found = true;
+					count++;
+					}
+					int found2 = 0;
+					 
+					if(j<c[k].length && a[k]>c[k] && found2==0){
+						found2 += +1; 
+					}
+					if(count==b.length && found2!= 0){
+						e += a[k];
+					}
+				}
+			}
+		}
+		 return e; 
+		}
+		*/ 
+
 	/* ESERCIZIO 2 (Massimo 7 punti -- da consegnare elettronicamente).
 	 * Scrivere un metodo di nome eDue con le seguenti caratteristiche:
 	 * --) eDue ha due parametri formali. Entrambi sono riferimenti (puntatori) 
@@ -37,6 +71,36 @@ public class Febbraio3 {
 	 * La classe Febbraio3TestExDue puo' essere usata per il testing di eDue.
 	 * SCRIVERE eDue immediatamente al di sotto di questo commento.
 	 */
+
+		public static boolean eDue(boolean[] a, boolean[] b){
+
+			boolean ris=false; 
+			if((a != null && b != null)&&(a.length !=0 && b.length !=0)){
+				ris =	contro_variante(a, b, 0, ris);
+			} 
+			return ris; 
+		}
+
+		private static boolean contro_variante (boolean[] a, boolean[] b, int  i, boolean ris){
+
+			boolean tmp;
+				if((i%2)==0){
+					if(a[i] && b[i]){
+						tmp = true; 
+						ris = tmp || ris;
+					 
+					if(a.length > i+1 && b.length > i+1){
+						return contro_variante(a, b, i+1, ris);
+				} else {
+					return ris; 
+				} 
+			}else {
+					return ris; 
+				}
+			} else {
+				return ris; 
+			}
+		}	
 
 	/* ESERCIZIO 3 (Massimo 2 + 2 + 3 + 3 punti -- da consegnare a mano).
 	 * Sia dato il metodo eTre qui sotto definito.
